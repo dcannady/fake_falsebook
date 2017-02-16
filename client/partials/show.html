@@ -1,0 +1,28 @@
+<div ng-controller="userController">
+  <h3>Name: {{ user.name }}</h3>
+  <h3>Age: {{ user.age }}</h3>
+
+  <div ng-controller="commentController">
+      <form>
+        <p>Name: <input type="text" placeholder="name..." ng-model="newComment.name"></p>
+        <p>Comment: <input type="text" placeholder="comment..." ng-model="newComment.content"></p>
+        console.log(Mike)
+        <input type="submit" value="Add Comment" ng-model="AddComment()">
+      </form>
+  </div>
+  <h3>Comments</h3>
+  <table>
+      <tr>
+          <th>Name</th>
+          <th>Comment</th>
+          <th>likes</th>
+          <th>Actions</th>
+      </tr>
+      <tr ng-repeat="user in showOneUser._comments | orderBy: 'like'">
+        <td>{{ comment.name}}</td>
+        <td>{{ comment.content}}</td>
+        <td>{{ comment.like }}</td>
+        <td><button ng-click="addLike(comment._id)">Like!</button></td>
+      </tr>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+<div = ng-controller="userController">
+    <form>
+      <p>Name: <input type="text" placeholder="Name..." ng-model="newUser.name"></p>
+      <p>Age: <input type="number" placeholder="Put a number" ng-model="newUser.age" min="0"></p>
+      <input type="submit" value="Add User" ng-click="addUser()">
+    </form>
+      <h3>Users Under 30</h3>
+      <table>
+          <tr>
+            <tr>Name</tr>
+            <tr>Age</tr>
+            <tr>Action</tr>
+          </tr>
+          <tr ng-repeat="user in users track by $index" ng-if="user.age <= 30">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td><button ng-click="delete($index)">Delete</button></td>
+          </tr>
+      </table>
+      <h3>Users over 30</h3>
+        <table>
+            <tr>
+              <tr>Name</tr>
+              <tr>Age</tr>
+              <tr>Action</tr>
+            </tr>
+            <tr ng-repeat="user in users" ng-if="user.age > 30">
+              <td><a href="#/show/">{{ user.name }}</td>
+              <td>{{ user.age }}</td>
+              <td><button mg-click="delete($index)">Delete</button></td>
+            </tr>
+        </table>
+</div>

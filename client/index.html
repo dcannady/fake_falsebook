@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Falsebook</title>
+  <meta name="author" content="David Cannady"
+  <!-- load style sheets go here, including bootstrap. If used.  -->
+  <link rel="stylesheet" href="">
+  <!-- angular library needs to be loaded first -->
+  <!-- Libraries have very small information in it. May need library for each feature. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+    <!-- My app file needs to be second to reach the partials. Client side-->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers/userController.js"></script>
+    <script type="text/javascript" src="factories/userFactory.js"></script>
+    <script type="text/javascript" src="controllers/commentController.js"></script>
+    <script type="text/javascript" src="factories/commentfactory.js"></script>
+     <!-- supporting file, I have to list each one to load. Controllers and Factories-->
+    <!-- <script type="text/javascript" src="./controllers/myControl.js"></script> -->
+</head>
+<body>
+  <div ng-view="">
+  </div>
+</body>
